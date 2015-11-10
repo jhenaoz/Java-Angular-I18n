@@ -1,6 +1,5 @@
 'use strict';
 
-angular.module('viamericas')
-    .controller('MainCtrl', function ($scope) {
-    	
-    });
+angular.module('viamericas').controller('MainCtrl', function($scope) {
+
+});
