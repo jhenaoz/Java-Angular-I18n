@@ -28,7 +28,7 @@
 <!-- endbuild -->
 
 </head>
-<body ng-app="viamericas" ng-controller="MainCtrl">
+<body ng-app="viamericas" ng-controller="MainCtrl as main">
 
 	<!--[if lte IE 8]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
@@ -53,12 +53,12 @@
 	<!-- endbuild -->
 
 	<!-- build:js({.tmp,app}) scripts/scripts.js -->
-	<script src="scripts/app.js"></script>
+	<script src="app.js"></script>
 	<!-- injector:js -->
-	<script src="scripts/routes.js"></script>
-	<script src="scripts/translations.js"></script>
-	<script src="scripts/home/home.controller.js"></script>
-	<script src="scripts/main.controller.js"></script>
+	<script src="routes.js"></script>
+	<script src="translations.js"></script>
+	<script src="home/home.controller.js"></script>
+	<script src="main.controller.js"></script>
 	<!-- endinjector -->
 	<!-- endbuild -->
 </body>
