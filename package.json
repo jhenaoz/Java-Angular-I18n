@@ -35,7 +35,7 @@
     "karma-chrome-launcher": "^0.2.0",
     "karma-coverage": "^0.5.2",
     "karma-jasmine": "^0.3.6",
-    "karma-jasmine-html-reporter": "^0.1.8"
+    "karma-jasmine-html-reporter": "^0.1.8",
     "time-grunt": "^1.0.0"
   },
   "engines": {
