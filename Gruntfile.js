@@ -200,31 +200,6 @@ module.exports = function (grunt) {
       }
     },
 
-    // Use nodemon to run server in debug mode with an initial breakpoint
-    nodemon: {
-      debug: {
-        script: 'server/app.js',
-        options: {
-          nodeArgs: ['--debug-brk'],
-          env: {
-            PORT: process.env.PORT || 9000
-          },
-          callback: function (nodemon) {
-            nodemon.on('log', function (event) {
-              console.log(event.colour);
-            });
-
-            // opens browser on initial server start
-            nodemon.on('config:update', function () {
-              setTimeout(function () {
-                require('open')('http://localhost:8080/debug?port=5858');
-              }, 500);
-            });
-          }
-        }
-      }
-    },
-
     // Automatically inject Bower components into the app
     wiredep: {
       target: {
@@ -440,7 +415,7 @@ module.exports = function (grunt) {
       scripts: {
         options: {
           transform: function(filePath) {
-            filePath = filePath.replace('/app/', '');
+            filePath = filePath.replace('/src/main/webapp/', '');
             filePath = filePath.replace('/.tmp/', '');
             return '<script src="' + filePath + '"></script>';
           },
@@ -450,10 +425,10 @@ module.exports = function (grunt) {
         files: {
           '<%= yeoman.app %>/index.html': [
             [
-              '{.tmp,<%= yeoman.app %>}/scripts/**/*.js',
-              '!{.tmp,<%= yeoman.app %>}/scripts/app.js',
-              '!{.tmp,<%= yeoman.app %>}/scripts/**/*.spec.js',
-              '!{.tmp,<%= yeoman.app %>}/scripts/**/*.mock.js'
+              '{.tmp,<%= yeoman.app %>}/scripts/app.js',
+              '{.tmp,<%= yeoman.app %>}/scripts/**/*.js'
+              // '!{.tmp,<%= yeoman.app %>}/scripts/**/*.spec.js',
+              // '!{.tmp,<%= yeoman.app %>}/scripts/**/*.mock.js'
             ]
           ]
         }
@@ -495,6 +470,7 @@ module.exports = function (grunt) {
     this.async();
   });
 
+  //usage, grunt serve dist, grunt serve debug, grunt serve.
   grunt.registerTask('serve', function (target) {
     if (target === 'dist') {
       return grunt.task.run(['build', 'env:all', 'env:prod', 'express:prod', 'wait', 'connect', 'express-keepalive']);
@@ -514,15 +490,14 @@ module.exports = function (grunt) {
 
     grunt.task.run([
       'clean:server',
-      'stylus',
-      'env:all',
+//      'stylus',
+//      'env:all',
       'concurrent:server',
-      'injector',
-      'wiredep',
-      'autoprefixer',
-      // 'express:dev',
+      'injector', // inject js in index.html file.
+      'wiredep',  // inject bower js in index.html file.
+      'autoprefixer', // inject css files into index.html file.
       'connect',
-      'wait',
+//      'wait',
       'open',
       'watch'
     ]);

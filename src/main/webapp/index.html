@@ -53,12 +53,22 @@
 	<!-- endbuild -->
 
 	<!-- build:js({.tmp,app}) scripts/scripts.js -->
-	<script src="app.js"></script>
 	<!-- injector:js -->
-	<script src="routes.js"></script>
-	<script src="translations.js"></script>
-	<script src="home/home.controller.js"></script>
-	<script src="main.controller.js"></script>
+	<script src="scripts/app.js"></script>
+	<script src="scripts/account/account.controller.js"></script>
+	<script src="scripts/auth/auth.controller.js"></script>
+	<script src="scripts/common/directives/directives.controller.js"></script>
+	<script src="scripts/common/filters/filters.controller.js"></script>
+	<script src="scripts/common/services/services.controller.js"></script>
+	<script src="scripts/home/home.controller.js"></script>
+	
+	<script src="scripts/home/static-content/static-content.controller.js"></script>
+	<script src="scripts/main.controller.js"></script>
+	<script src="scripts/payment/cash-pickup/cash-pickup.controller.js"></script>
+	<script src="scripts/payment/recipient/recipient.controller.js"></script>
+	<script src="scripts/payment/sender/sender.controller.js"></script>
+	<script src="scripts/routes.js"></script>
+	<script src="scripts/translations.js"></script>
 	<!-- endinjector -->
 	<!-- endbuild -->
 </body>

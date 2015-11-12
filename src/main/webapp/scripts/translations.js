@@ -12,12 +12,12 @@
         $translateProvider.preferredLanguage('en');
 
         $translateProvider.useStaticFilesLoader({
-            prefix : '/languages/',
+            prefix : 'scripts/languages/',
             suffix : '.index.json'
         });
 
         $translateProvider.useStaticFilesLoader({
-            prefix : '/languages/home/',
+            prefix : 'scripts/languages/home/',
             suffix : '.home.json'
         });
 
