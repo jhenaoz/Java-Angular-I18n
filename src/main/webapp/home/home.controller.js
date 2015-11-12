@@ -8,8 +8,9 @@
     function HomeCtrl($translate) {
 
         var vm = this;
+        vm.changeLanguage = changeLanguage;
 
-        vm.changeLanguage = function(language) {
+        function changeLanguage(language) {
             $translate.use(language);
         };
 
