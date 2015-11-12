@@ -318,7 +318,7 @@ module.exports = function (grunt) {
       main: {
         options: {
           // This should be the name of your apps angular module
-          module: 'checkedUpApp',
+          module: 'viamericas',
           htmlmin: {
             collapseBooleanAttributes: true,
             collapseWhitespace: true,
