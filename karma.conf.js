@@ -17,6 +17,7 @@ module.exports = function(config) {
     files: [
 
       'src/main/webapp/bower_components/angular/angular.js',
+      'src/main/webapp/bower_components/angular-animate/angular-animate.js',
       'src/main/webapp/bower_components/angular-aria/angular-aria.js',
       'src/main/webapp/bower_components/angular-material-icons/angular-material-icons.js',
       'src/main/webapp/bower_components/angular-messages/angular-messages.js',
