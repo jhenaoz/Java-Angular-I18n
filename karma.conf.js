@@ -29,16 +29,11 @@ module.exports = function(config) {
       'src/main/webapp/bower_components/angular-translate-loader-static-files/angular-translate-loader-static-files.js',
       'src/main/webapp/bower_components/angular-ui-router/release/angular-ui-router.js',
 
-      'src/main/webapp/app.js',
+      'src/main/webapp/scripts/app.js',
       'src/main/webapp/main.controller.js',
       'src/main/webapp/routes.js',
       'src/main/webapp/translations.js',
-      'src/main/webapp/account/**/*.js',
-      'src/main/webapp/auth/**/*.js',
-      'src/main/webapp/common/**/*.js',
-      'src/main/webapp/home/**/*.js',
-      'src/main/webapp/payment/**/*.js',
-      
+      'src/main/webapp/scripts/**/*.js'
       
     ],
 
@@ -51,15 +46,7 @@ module.exports = function(config) {
     // preprocess matching files before serving them to the browser
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
     preprocessors: { 
-      'src/main/webapp/app.js':['coverage'],
-      'src/main/webapp/main.controller.js':['coverage'],
-      'src/main/webapp/routes.js':['coverage'],
-      'src/main/webapp/translations.js':['coverage'],
-      'src/main/webapp/account/**/*.controller.js':['coverage'],
-      'src/main/webapp/auth/**/*.controller.js':['coverage'],
-      'src/main/webapp/common/**/*.controller.js':['coverage'],
-      'src/main/webapp/home/**/*.controller.js':['coverage'],
-      'src/main/webapp/payment/**/*.controller.js':['coverage'],
+      'src/main/webapp/scripts/**/*.controller.js':['coverage']
     },
 
 
