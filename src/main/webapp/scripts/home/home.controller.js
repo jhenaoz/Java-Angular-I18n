@@ -10,15 +10,15 @@
         var vm = this;
         vm.changeLanguage = changeLanguage;
         vm.htmlContent = htmlContent;
-        vm.content = htmlContent();
+        vm.content = '';
         vm.test = 'this is a test';
         
-        
+        htmlContent();
         /////////////////////////////////
         function htmlContent(){
         	HomeService.requestHtml()
         	.then(function(response){
-        		return response.data;
+        		vm.content = response.data;
         	},function(error){
         		
         	});
