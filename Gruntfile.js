@@ -303,7 +303,7 @@ module.exports = function (grunt) {
             removeScriptTypeAttributes: true,
             removeStyleLinkTypeAttributes: true
           },
-          usemin: 'dist/public/scripts/scripts.js'
+          usemin: '<%= yeoman.dist %>/public/scripts/scripts.js'
         },
         cwd: '<%= yeoman.app %>',
         src: ['{components,scripts,views}/**/*.html'],
@@ -397,15 +397,15 @@ module.exports = function (grunt) {
       }
     },
 
-    env: {
-      test: {
-        NODE_ENV: 'test'
-      },
-      prod: {
-        NODE_ENV: 'production'
-      },
-      all: localConfig
-    },
+    // env: {
+    //   test: {
+    //     NODE_ENV: 'test'
+    //   },
+    //   prod: {
+    //     NODE_ENV: 'production'
+    //   },
+    //   all: localConfig
+    // },
 
     injector: {
       options: {
@@ -455,20 +455,20 @@ module.exports = function (grunt) {
   });
 
   // Used for delaying livereload until after server has restarted
-  grunt.registerTask('wait', function () {
-    grunt.log.ok('Waiting for server reload...');
+  // grunt.registerTask('wait', function () {
+  //   grunt.log.ok('Waiting for server reload...');
 
-    var done = this.async();
+  //   var done = this.async();
 
-    setTimeout(function () {
-      grunt.log.writeln('Done waiting!');
-      done();
-    }, 1500);
-  });
+  //   setTimeout(function () {
+  //     grunt.log.writeln('Done waiting!');
+  //     done();
+  //   }, 1500);
+  // });
 
-  grunt.registerTask('express-keepalive', 'Keep grunt running', function() {
-    this.async();
-  });
+  // grunt.registerTask('express-keepalive', 'Keep grunt running', function() {
+  //   this.async();
+  // });
 
   //usage, grunt serve dist, grunt serve debug, grunt serve.
   grunt.registerTask('serve', function (target) {

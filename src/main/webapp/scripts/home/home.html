@@ -2,8 +2,11 @@
 	<div>
 		<h1>{{ 'HEADLINE' | translate }}</h1>
 		<p>{{ 'INTRO_TEXT' | translate }}</p>
+		<p>{{home.test}}</p>
 
 		<button ng-click="home.changeLanguage('en')">{{ 'ENGLISH' | translate }}</button>
 		<button ng-click="home.changeLanguage('es')">{{ 'SPANISH' | translate }}</button>
+	</div>
+	<div ng-bind-html="home.content">
 	</div>
 </section>
