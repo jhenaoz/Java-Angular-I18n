@@ -55,6 +55,17 @@ describe('HomeCtrl', function(){
         scope.$apply();
         expect(vm.content).toBe(htmlResponse.data);
     }));
+    it('call the HomeService and check the error in the scope model',inject( function($q){
+        translate = $httpBackend.when('GET', 'scripts/languages/home/en.home.json').respond();
+        $httpBackend.flush();
+        var htmlResponse = {data:'<p>i am the response</p>'};
+        var response = $q.defer();
+        spyOn(HomeServiceMock, 'requestHtml').and.returnValue(response.promise);
+        vm.htmlContent();
+        response.reject(htmlResponse);
+        scope.$apply();
+        expect(vm.content).toBe('');
+    }));
   });
 
 
