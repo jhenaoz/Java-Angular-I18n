@@ -53,7 +53,7 @@ describe('HomeCtrl', function(){
         vm.htmlContent();
         response.resolve(htmlResponse);
         scope.$apply();
-        expect(vm.content).not.toBe(htmlResponse.data);
+        expect(vm.content).toBe(htmlResponse.data);
     }));
     it('call the HomeService and check the error in the scope model',inject( function($q){
         translate = $httpBackend.when('GET', 'scripts/languages/home/en.home.json').respond();
