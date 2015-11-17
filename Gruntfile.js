@@ -15,6 +15,9 @@ module.exports = function (grunt) {
     localConfig = {};
   }
 
+  var currentCommit =  require('this-commit')();
+  console.info('Current Commit', currentCommit);
+
   // Load grunt tasks automatically, when needed
   require('jit-grunt')(grunt, {
     // express: 'grunt-express-server',
@@ -23,7 +26,9 @@ module.exports = function (grunt) {
     ngtemplates: 'grunt-angular-templates',
     cdnify: 'grunt-google-cdn',
     protractor: 'grunt-protractor-runner',
-    injector: 'grunt-asset-injector'
+    injector: 'grunt-asset-injector',
+    ngconstant : 'grunt-ng-constant'
+
   });
 
   // Time how long tasks take. Can help when optimizing build times
@@ -53,6 +58,16 @@ module.exports = function (grunt) {
       server: {
         url: 'http://localhost:9000'//<%= express.options.port %>'
       }
+    },
+    ngconstant :{
+      options:{
+        name : 'viamericas',
+        dest : '<%= yeoman.app %>/scripts/conf.js',
+        constants:{
+          commit: currentCommit
+        }
+      },
+      build:{}
     },
     watch: {
       injectJS: {
@@ -450,6 +465,7 @@ module.exports = function (grunt) {
 //      'stylus',
 //      'env:all',
       'concurrent:server',
+      'ngconstant',
       'injector', // inject js in index.html file.
       'wiredep',  // inject bower js in index.html file.
       'autoprefixer', // inject css files into index.html file.
@@ -470,6 +486,7 @@ module.exports = function (grunt) {
     'clean:dist',
     'karma',
     'concurrent:dist',
+    'ngconstant',
     'injector',
     'wiredep',
     'useminPrepare',
