@@ -16,13 +16,13 @@
 <meta name="apple-mobile-web-app-capable" content="yes" />
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta http-equiv="x-ua-compatible" content="IE=edge" />
-<!-- build:css({.tmp,app}) styles/vendor.css -->
+<!-- build:css({.tmp,src/main/webapp}) styles/vendor.css -->
 <!-- bower:css -->
 <link rel="stylesheet" href="bower_components/angular-material-icons/angular-material-icons.css" />
 <!-- endbower -->
 <!-- endbuild -->
 
-<!-- build:css({.tmp,app}) styles/main.css -->
+<!-- build:css({.tmp,src/main/webapp}) styles/main.css -->
 <!-- injector:css -->
 <!-- endinjector -->
 <!-- endbuild -->
@@ -36,7 +36,7 @@
 
 	<div ui-view="" layout-fill></div>
 
-	<!-- build:js({.tmp,app}) scripts/vendor.js -->
+	<!-- build:js({.tmp,src/main/webapp}) scripts/vendor.js -->
 	<!-- bower:js -->
 	<script src="bower_components/angular/angular.js"></script>
 	<script src="bower_components/angular-animate/angular-animate.js"></script>
@@ -52,7 +52,7 @@
 	<!-- endbower -->
 	<!-- endbuild -->
 
-	<!-- build:js({.tmp,app}) scripts/scripts.js -->
+	<!-- build:js({.tmp,src/main/webapp}) scripts/scripts.js -->
 	<!-- injector:js -->
 	<script src="scripts/app.js"></script>
 	<script src="scripts/account/account.controller.js"></script>
@@ -61,7 +61,6 @@
 	<script src="scripts/common/filters/filters.controller.js"></script>
 	<script src="scripts/common/services/services.controller.js"></script>
 	<script src="scripts/home/home.controller.js"></script>
-	<script src="scripts/home/home.controller.spec.js"></script>
 	<script src="scripts/home/home.service.js"></script>
 	<script src="scripts/home/static-content/static-content.controller.js"></script>
 	<script src="scripts/main.controller.js"></script>

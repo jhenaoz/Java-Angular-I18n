@@ -14,6 +14,8 @@
         vm.test = 'this is a test';
         
         htmlContent();
+
+        
         /////////////////////////////////
         function htmlContent(){
         	HomeService.requestHtml()

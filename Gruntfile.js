@@ -18,6 +18,7 @@ module.exports = function (grunt) {
   // Load grunt tasks automatically, when needed
   require('jit-grunt')(grunt, {
     // express: 'grunt-express-server',
+    karma :'grunt-karma',
     useminPrepare: 'grunt-usemin',
     ngtemplates: 'grunt-angular-templates',
     cdnify: 'grunt-google-cdn',
@@ -196,8 +197,8 @@ module.exports = function (grunt) {
       dist: {
         files: {
           src: [
-            '<%= yeoman.dist %>/public/app/{,*/}*.js',
-            '<%= yeoman.dist %>/public/app/{,*/}*.css',
+            '<%= yeoman.dist %>/public/**/{,*/}*.js',
+            '<%= yeoman.dist %>/public/**/{,*/}*.css',
             // '<%= yeoman.dist %>/public/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}',
             '<%= yeoman.dist %>/public/assets/fonts/*'
           ]
@@ -371,11 +372,12 @@ module.exports = function (grunt) {
       unit: {
         configFile: 'karma.conf.js',
         singleRun: true
-      },
-      e2e: {
-        configFile: 'karma-e2e.conf.js',
-        singleRun: true
       }
+      //,
+      // e2e: {
+      //   configFile: 'karma-e2e.conf.js',
+      //   singleRun: true
+      // }
     },
 
     injector: {
@@ -397,8 +399,8 @@ module.exports = function (grunt) {
           '<%= yeoman.app %>/index.html': [
             [
               '{.tmp,<%= yeoman.app %>}/scripts/app.js',
-              '{.tmp,<%= yeoman.app %>}/scripts/**/*.js'
-              // '!{.tmp,<%= yeoman.app %>}/scripts/**/*.spec.js',
+              '{.tmp,<%= yeoman.app %>}/scripts/**/*.js',
+              '!{.tmp,<%= yeoman.app %>}/scripts/**/*.spec.js'
               // '!{.tmp,<%= yeoman.app %>}/scripts/**/*.mock.js'
             ]
           ]
@@ -466,6 +468,7 @@ module.exports = function (grunt) {
 
   grunt.registerTask('build', [
     'clean:dist',
+    'karma',
     'concurrent:dist',
     'injector',
     'wiredep',
@@ -475,7 +478,7 @@ module.exports = function (grunt) {
     'concat',
     'ngAnnotate',
     'copy:dist',
-    'cdnify',
+    // 'cdnify',
     'cssmin',
     'uglify',
     'rev',
@@ -484,7 +487,7 @@ module.exports = function (grunt) {
 
   grunt.registerTask('default', [
     'newer:jshint',
-    'test',
+    // 'test',
     'build'
   ]);
 };
