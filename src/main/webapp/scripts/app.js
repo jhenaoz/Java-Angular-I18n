@@ -10,6 +10,7 @@
 		'ui.router',
 		'ngSanitize',
 		'ngTouch',
+        'config',
         'pascalprecht.translate'
         ]
     );

@@ -61,8 +61,9 @@ module.exports = function (grunt) {
     },
     ngconstant :{
       options:{
-        name : 'viamericas',
-        dest : '<%= yeoman.app %>/scripts/conf.js',
+        name : 'config',
+        dest : '<%= yeoman.app %>/scripts/angular-constants.js',
+        wrap : true,
         constants:{
           commit: currentCommit
         }
