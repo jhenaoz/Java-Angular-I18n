@@ -3,7 +3,7 @@
 
 angular.module('config', [])
 
-.constant('commit', '5a848af00681ecc7d67a491f886e52a3db7f61e4')
+.constant('commit', 'ee2408e375774aef02b7bb7d79e6abd77e68d5f5')
 
 ;
 })(angular);
